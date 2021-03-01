@@ -5,6 +5,8 @@ const express = require('express');
 // CONFIGURATION //
 
 const app = express();
+
+// Allow use of Heroku's port or your own local port, dependong on the environment
 const port = 3000;
 
 // ROUTES //
