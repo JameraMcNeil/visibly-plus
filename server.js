@@ -7,17 +7,22 @@ const methodOverride = require('method-override');
 // CONFIGURATION //
 
 const app = express();
-
-app.use(express.urlencoded({extended:true}));
-app.use(methodOverride('_method'));
+// Allow use of Heroku's port or your own local port, dependong on the environment
+const PORT = process.env.PORT || 3000;
 
 mongoose.connect('mongodb://localhost:27017/basiccrud', { useNewUrlParser: true});
 mongoose.connection.once('open', ()=> {
     console.log('connected to mongo');
 });
 
-// Allow use of Heroku's port or your own local port, dependong on the environment
-const port = 3000;
+// MIDDLEWARE //
+
+app.use(express.urlencoded({extended:true}));
+app.use(methodOverride('_method'));
+
+// MODELS //
+
+const Shop = require('./models/shops');
 
 // ROUTES //
 
@@ -68,6 +73,6 @@ app.put('/shops/:id', (req, res) => {
 })
 
 
-app.listen(port, () => {
-    console.log('Listening in port: ' + port)
+app.listen(PORT, () => {
+    console.log('Listening in port: ' + PORT)
 });
