@@ -11,11 +11,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 require('dotenv').config()
 
-mongoose.connect('mongodb://localhost:27017/visibly-plus', { useNewUrlParser: true}, {useUnifiedTopology: true}
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/visibly-plus';
+
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true}, {useUnifiedTopology: true}
 );
 mongoose.connection.once('open', ()=> {
     console.log('connected to mongo');
 });
+
+
 
 // MIDDLEWARE //
 
