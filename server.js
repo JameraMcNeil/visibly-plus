@@ -28,6 +28,67 @@ const Shop = require('./models/shops');
 
 // ROUTES //
 
+app.get('/seed', (req, res) => {
+    Shop.create([
+    {
+        name:'Girlfriend Collective',
+        description:'Sustainable, ethically made activewear in sizes XXS - 6XL',
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1mN3LFxLbv0q2rZGS2ziWijQTCozNHGlMUg&usqp=CAU',
+        isBlackOwned: false,
+        isSustainable: true,
+        isSmallBusiness: false,
+        location: 'Based in Seattle, Washington'
+    },
+    {
+        name:'WrayNYC',
+        description:'Fine art inspired clothing. Sizes XS-5X.',
+        img: './img/wraynyc.jpg',
+        isBlackOwned: false,
+        isSustainable: true,
+        isSmallBusiness: true,
+        location: 'Based in NYC'
+    },
+    {
+        name:'Henning',
+        description:'Luxury womenswear in sizes 12 to 24.',
+        img: './img/henning.jpg',
+        isBlackOwned: false,
+        isSustainable: true,
+        isSmallBusiness: true,
+        location: 'Based in NYC'
+    },
+    {
+        name:'Beaton Linen',
+        description:'A slow fashion brand. Sizes XS-4X.',
+        img: './img/beatonlinen.jpg',
+        isBlackOwned: false,
+        isSustainable: true,
+        isSmallBusiness: true,
+        location: 'Based in Vancouver'
+    },
+    {
+        name:'Alder Apparel',
+        description:'Ethically-made, sustainable, outdoor apparel in sizes X6-6X.',
+        img: './img/alderapparel.jpg',
+        isBlackOwned: false,
+        isSustainable: true,
+        isSmallBusiness: true,
+        location: 'Based in Toronto, Canada'
+    },
+    {
+        name:'Nettle Studios',
+        description:'Size inclusive, slow fashion, small batch.',
+        img: './img/nettlestudios.jpg',
+        isBlackOwned: false,
+        isSustainable: true,
+        isSmallBusiness: true,
+        location: 'Based in San Francisco'
+    }
+], (error, data) => {
+    res.redirect('/shops')
+    })
+})
+
 app.get('/', (req,res) => {
     res.send('This is a test.')
 });
