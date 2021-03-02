@@ -21,6 +21,7 @@ mongoose.connection.once('open', ()=> {
 
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
+app.use(express.static('public'));
 
 // MODELS //
 
@@ -33,7 +34,7 @@ app.get('/seed', (req, res) => {
     {
         name:'Girlfriend Collective',
         description:'Sustainable, ethically made activewear in sizes XXS - 6XL',
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1mN3LFxLbv0q2rZGS2ziWijQTCozNHGlMUg&usqp=CAU',
+        img: './img/girlfriend.jpg',
         isBlackOwned: false,
         isSustainable: true,
         isSmallBusiness: false,
@@ -85,18 +86,18 @@ app.get('/seed', (req, res) => {
         location: 'Based in San Francisco'
     }
 ], (error, data) => {
-    res.redirect('/shops')
-    })
-})
-
-app.get('/', (req,res) => {
-    res.send('This is a test.')
+    res.redirect('/shops');
+    });
 });
 
 // index //
 
 app.get('/shops', (req, res) => {
-    res.send('This is where the shops will be')
+    Shop.find({}, (error, shops) => {
+        res.render('index.ejs', {
+            allShops : shops
+        });
+    });
 });
 
 // new //
