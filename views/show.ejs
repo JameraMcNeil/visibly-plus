@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="images" href="/public/img/">
     <title>Discover a Shop</title>
 </head>
 <body>
@@ -19,17 +20,31 @@
     <br/>
     <p><%=shop.location %></p>
     <br/>
-    <%= shop.isBlackOwned %>
-    <%= shop.isSustainable %>
-    <%= shop.isSmallBusiness %>
+    <% if (shop.isBlackOwned === true) { %>
+        <%= shop.name %> is Black-owned. 
+        <% } else { %>
+
+    <% } %>
+    <br/>
+    <% if (shop.isSustainable === true) { %>
+        <%= shop.name %> is a sustainable / slow fashion brand. 
+        <% } else { %>
+            
+    <% } %>
+    <br/>
+    <% if (shop.isSmallBusiness === true) { %>
+        <%= shop.name %> is a small business. 
+        <% } else { %>
+            
+    <% } %>
     <br/>
     <a href='/shops'>Back to Homepage</a>
     <br/>
     <button>
-        <a href='/shops<%= i %>/edit'>Edit Shop</a>
+        <a href='/shops<%= shop.id %>/edit'>Edit Shop</a>
     </button>
     <br/>
-    <form class = 'form' action = '/shops/<%= i %>?_method=DELETE' method ='POST'>
+    <form class = 'form' action = '/shops/<%= shop.id %>?_method=DELETE' method ='POST'>
         <input type = 'submit' value = 'DELETE' />
     </form>
 </body>

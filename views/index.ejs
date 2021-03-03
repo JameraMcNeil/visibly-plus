@@ -19,7 +19,7 @@
             <% for (let i = 0; i < allShops.length; i++) { %>
                 <li>
                     <%= allShops[i].name %> <br/>
-                    <a href='/shops/<%i%>'>
+                    <a href='/shops/<%= allShops[i].id%>'>
                     <img src = '<%=allShops[i].img%>'style = 'max-width: 300px;'>
                     </a>
                 </li>
