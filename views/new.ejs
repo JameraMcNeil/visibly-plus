@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Shop</title>
+</head>
+<body>
+    <h1>Add a New Shop</h1>
+    <form action ='/shops' method='POST'>
+        Name: <input type ='text' name= 'name'/><br/>
+        Description: <input type ='textarea' name = 'description'/><br/>
+        Image: <input type ='text' name ='image'/><br/>
+        Black-owned: <input type ='checkbox' name='isBlackOwned'/><br/>
+        Sustainable: <input type = 'checkbox' name ='isSustainable'/><br/>
+        Small Business: <input type ='checkbox' name ='isSmallBusiness'/><br/>
+        Location: <input type ='text' name ='location'/><br/>
+        <input type = 'submit' name='' value ='Create a Shop'/>
+    </form>
+</body>
+</html>

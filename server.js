@@ -107,7 +107,7 @@ app.get('/shops', (req, res) => {
 // new //
 
 app.get('/shops/new', (req, res) => {
-    res.send('Add a new shop here')
+    res.render('new.ejs')
 });
 
 // create //
