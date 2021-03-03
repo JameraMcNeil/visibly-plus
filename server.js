@@ -119,7 +119,11 @@ app.post('/shops/', (req,res) => {
 // show //
 
 app.get('/shops/:id', (req,res) => {
-    res.send('View a specific shop page here')
+    Shop.findById(req.params.id, (error, foundShop) => {
+        res.render('show.ejs', {
+            shop: foundShop
+        });
+    });
 });
 
 // delete //

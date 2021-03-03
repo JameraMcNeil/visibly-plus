@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover a Shop</title>
+</head>
+<body>
+    <head>
+        <h1>Discover a Brand</h1>
+    </head>
+    <br/>
+    <h2><%=shop.name %></h2>
+    <img src ='<%=shop.img%>' style = 'max-width: 300px;'>
+    <br/>
+
+    <p><%= shop.description %></p>
+    <br/>
+    <p><%=shop.location %></p>
+    <br/>
+    <%= shop.isBlackOwned %>
+    <%= shop.isSustainable %>
+    <%= shop.isSmallBusiness %>
+    <br/>
+    <a href='/shops'>Back to Homepage</a>
+    <br/>
+    <button>
+        <a href='/shops<%= i %>/edit'>Edit Shop</a>
+    </button>
+    <br/>
+    <form class = 'form' action = '/shops/<%= i %>?_method=DELETE' method ='POST'>
+        <input type = 'submit' value = 'DELETE' />
+    </form>
+</body>
+</html>
