@@ -3,8 +3,9 @@ body {
     text-align: center;
 }
 
-.shop-content {
+/* .shop-content {
     display: flex;
-    flex-wrap;
-    j
-}
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around
+} */
