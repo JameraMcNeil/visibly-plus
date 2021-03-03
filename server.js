@@ -107,13 +107,33 @@ app.get('/shops', (req, res) => {
 // new //
 
 app.get('/shops/new', (req, res) => {
-    res.render('new.ejs')
+    res.render('new.ejs');
 });
 
 // create //
 
 app.post('/shops/', (req,res) => {
-    console.log('The information from the new route will be posted using this route')
+    if(req.body.isBlackOwned === 'on') {
+        req.body.isBlackOwned = true;
+    } else {
+        req.body.isBlackowned =false;
+    };
+    if(req.body.isSustainable === 'on') {
+        req.body.isSustainable = true;
+    } else {
+        req.body.isSustainable = false;
+    };
+    if(req.body.isSmallBusiness === 'on') {
+        req.body.isSmallBusiness = true;
+    } else {
+        req.body.isSmallBusiness = false; 
+    };
+
+    console.log(req.body);
+
+    Shop.create(req.body, (error, createdShop) => {
+        res.redirect('/shops')
+    });
 });
 
 // show //
