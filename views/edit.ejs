@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="images" href="/public/img/">
+    <title>Edit Form</title>
+</head>
+<body>
+    <h1>Edit Shop Page</h1>
+    <form action='/shops/<%= shop.id %>?_method=PUT' method ='POST'>
+        Name: <input type ='text' name= 'name' value ='<%=shop.name %>'/><br/>
+        Description: <input type ='textarea' name = 'description' value ='<%= shop.description %>'/><br/>
+        Image: <input type ='text' name ='image'/><br/>
+        Black-owned: <input type ='checkbox' name='isBlackOwned'
+        <% if (shop.isBlackOwned === true) { %>
+            checked
+        <% } %>
+        /><br/>
+        Sustainable: <input type = 'checkbox' name ='isSustainable'
+            <% if (shop.isSustainable === true) { %>
+                checked
+            <% } %>
+        /><br/>
+        Small Business: <input type ='checkbox' name ='isSmallBusiness'
+        <% if (shop.isSmallBusiness === true) { %>
+            checked
+        <% } %>
+        /><br/>
+        Location: <input type ='text' name ='location'/><br/>
+        <input type = 'submit' name='' value ='Create a Shop'/>
+    </form>
+</body>
+</html>
