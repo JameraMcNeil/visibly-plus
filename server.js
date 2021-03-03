@@ -149,7 +149,10 @@ app.get('/shops/:id', (req,res) => {
 // delete //
 
 app.delete('/shops/:id', (req, res) => {
-    console.log('This route deletes any app')
+    Shop.findByIdAndRemove(req.params.id, (error, deletedShop) => {
+        console.log('Deleting record: ' + req.params.id);
+        console.log(deletedShop)
+    });
 });
 
 // edit //
