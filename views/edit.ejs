@@ -15,7 +15,7 @@
     <form action='/shops/<%= shop.id %>?_method=PUT' method ='POST'>
         Name: <input type ='text' name= 'name' value ='<%=shop.name %>'/><br/>
         Description: <input type ='textarea' name = 'description' value ='<%= shop.description %>'/><br/>
-        Image: <input type ='text' name ='image'/><br/>
+        Image: <input type ='text' name ='img'/><br/>
         Black-owned: <input type ='checkbox' name='isBlackOwned'
         <% if (shop.isBlackOwned === true) { %>
             checked
@@ -32,7 +32,7 @@
         <% } %>
         /><br/>
         Location: <input type ='text' name ='location'/><br/>
-        <input type = 'submit' name='' value ='Create a Shop'/>
+        <input type = 'submit' name='' value ='Edit Shop'/>
     </form>
 </body>
 </html>
