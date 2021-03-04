@@ -3,9 +3,6 @@ body {
     text-align: center;
 }
 
-/* .shop-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: space-around
-} */
+.shop-content {
+    list-style-type: none;
+}
