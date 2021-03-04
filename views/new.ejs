@@ -18,42 +18,41 @@
             </nav>
         </header>
     
-    <form action ='/shops/' method='POST'>
-        <div class = 'row'>
-            <div class = 'four columns'>
-                Name: <input type ='text' name= 'name'/>
+        <form action ='/shops/' method='POST'>
+            <div class = 'row'>
+                <div class = 'four columns'>
+                    Name: <input type ='text' name= 'name'/>
+                </div>
+                <div class = 'four columns'>
+                    Description: <input type ='text' name = 'description'/>
+                </div>
+                <div class = 'four columns'>
+                    Image: <input type ='text' name ='img'/>
+                </div>
             </div>
-            <div class = 'four columns'>
-                Description: <input type ='text' name = 'description'/>
+             <div class = 'row'>
+                <div class = 'four columns'>
+                    Black-owned: <input type ='checkbox' name='isBlackOwned'/>
+                </div>
+                <div class = 'four columns'>
+                    Sustainable: <input type = 'checkbox' name ='isSustainable'/>
+                </div>
+                <div class = 'four columns'>
+                    Small Business: <input type ='checkbox' name ='isSmallBusiness'/>
+                </div>
             </div>
-            <div class = 'four columns'>
-                Image: <input type ='text' name ='img'/>
-            </div>
-        </div>
-        <div class = 'row'>
-            <div class = 'four columns'>
-                Black-owned: <input type ='checkbox' name='isBlackOwned'/>
-            </div>
-            <div class = 'four columns'>
-                Sustainable: <input type = 'checkbox' name ='isSustainable'/>
-            </div>
-            <div class = 'four columns'>
-                Small Business: <input type ='checkbox' name ='isSmallBusiness'/>
-            </div>
-        </div>
-         <div class = 'row'>
+            <div class = 'row'>
                 <div class = 'six colums'>
                     Location: <input type ='text' name ='location'/>
                 </div>
                 <div class = 'four colums'>
                     <input class ='button-primary' type = 'submit' name='' value ='Create a Shop'/>
                 </div>
-        </div>
-            
-        </div>
-    </form>
-    <br/>
-    <a href ='/shops'>Back to Homepage</a>
+            </div>
+        </form>
+        <footer>
+            Created by <a href = 'https://github.com/JameraMcNeil' target ='_blank'>Jamera McNeil</a>
+        </footer>
     </div>
 </body>
 </html>

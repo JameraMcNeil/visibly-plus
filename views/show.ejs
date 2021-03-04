@@ -12,48 +12,52 @@
 </head>
 <body>
     <div>
-    <header>
-        <h1>Discover a Brand</h1>
-        <nav>
-            <a href='/shops'>Back to Homepage</a>
-        </nav>
-    </header>
-    <h2><%=shop.name %></h2>
-    <img src ='<%=shop.img%>' style = 'max-width: 300px;'>
-    <div>
-    <p><%= shop.description %></p>
-    <p><%=shop.location %></p>
-    <% if (shop.isBlackOwned === true) { %>
-        <%= shop.name %> is Black-owned. 
-        <% } else { %>
+        <header>
+            <h1>Discover a Brand</h1>
+            <nav>
+                <a href='/shops'>Back to Homepage</a>
+            </nav>
+        </header>
+        <h2><%=shop.name %></h2>
+        <img src ='<%=shop.img%>' style = 'max-width: 300px;'>
+        <div>
+            <p><%= shop.description %></p>
+            <p><%=shop.location %></p>
+            <% if (shop.isBlackOwned === true) { %>
+                <%= shop.name %> is Black-owned. 
+                <% } else { %>
 
-    <% } %>
-    <% if (shop.isSustainable === true) { %>
-        <%= shop.name %> is a sustainable / slow fashion brand. 
-        <% } else { %>
+            <% } %>
+            <% if (shop.isSustainable === true) { %>
+                <%= shop.name %> is a sustainable / slow fashion brand. 
+                <% } else { %>
             
-    <% } %>
-    <br/>
-    <% if (shop.isSmallBusiness === true) { %>
-        <%= shop.name %> is a small business. 
-        <% } else { %>
+            <% } %>
+            <br/>
+            <% if (shop.isSmallBusiness === true) { %>
+                <%= shop.name %> is a small business. 
+                <% } else { %>
             
-    <% } %>
-    </div>
-    <br/>
+            <% } %>
+        </div>
+        <br/>
     
-    <div class = 'row'>
-        <div class = 'six columns'>
-            <button>
-                <a href='/shops/<%= shop.id %>/edit'>Edit Shop</a>
-            </button>
-        </div>
-        <div class = 'six columns'>
-            <form class = 'form' action = '/shops/<%= shop.id %>?_method=DELETE' method ='POST'>
+        <div class = 'row'>
+            <div class = 'six columns'>
+                <button>
+                    <a href='/shops/<%= shop.id %>/edit'>Edit Shop</a>
+                </button>
+            </div>
+            <div class = 'six columns'>
+                <form class = 'form' action = '/shops/<%= shop.id %>?_method=DELETE' method ='POST'>
                 <input type = 'submit' value = 'DELETE' />
-            </form>
-        </div>
-    </div> 
+                </form>
+            </div>
+        </div> 
+        <footer>
+            Created by <a href = 'https://github.com/JameraMcNeil' target ='_blank'>Jamera McNeil</a>
+        </footer>
+    
     </div>
 </body>
 </html>
