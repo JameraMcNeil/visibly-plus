@@ -30,3 +30,6 @@ Live site: https://mighty-mesa-49376.herokuapp.com/shops
 <img src ='public/img/JSM_Wireframe1'>
 <img src ='public/img/JSM_Wireframe2'>
 </p>
+
+![hand-written notes] (/img/JSM_Wireframe1)
+![hand-written notes and wireframe] (/img/JSM_Wireframe2)
