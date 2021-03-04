@@ -11,28 +11,55 @@
     <title>Edit Form</title>
 </head>
 <body>
-    <h1>Edit Shop Page</h1>
-    <form action='/shops/<%= shop.id %>?_method=PUT' method ='POST'>
-        Name: <input type ='text' name= 'name' value ='<%=shop.name %>'/><br/>
-        Description: <input type ='textarea' name = 'description' value ='<%= shop.description %>'/><br/>
-        Image: <input type ='text' name ='img'/><br/>
-        Black-owned: <input type ='checkbox' name='isBlackOwned'
-        <% if (shop.isBlackOwned === true) { %>
-            checked
-        <% } %>
-        /><br/>
-        Sustainable: <input type = 'checkbox' name ='isSustainable'
-            <% if (shop.isSustainable === true) { %>
-                checked
-            <% } %>
-        /><br/>
-        Small Business: <input type ='checkbox' name ='isSmallBusiness'
-        <% if (shop.isSmallBusiness === true) { %>
-            checked
-        <% } %>
-        /><br/>
-        Location: <input type ='text' name ='location'/><br/>
-        <input type = 'submit' name='' value ='Edit Shop'/>
-    </form>
+    <div class = 'container'>
+        <header>
+            <h1>Edit Shop Page</h1>
+        </header>
+    
+        <form action='/shops/<%= shop.id %>?_method=PUT' method ='POST'>
+            <div class = 'row'>
+                <div class = 'four columns'>
+                    Name: <input type ='text' name= 'name' value ='<%=shop.name %>'/>
+                </div>
+                <div class = 'four columns'>
+                    Description: <input type ='textarea' name = 'description' value ='<%= shop.description %>'/><br/>
+                </div>
+                <div>
+                    Image: <input type ='text' name ='img' value ='<%= shop.img %>'/>
+                </div> 
+            </div>
+            <div class = row>
+                <div class = 'four columns'>
+                    Black-owned: <input type ='checkbox' name='isBlackOwned'
+                    <% if (shop.isBlackOwned === true) { %>
+                    checked
+                    <% } %>
+                    />
+                </div>
+                <div class = 'four columns'>
+                    Sustainable: <input type = 'checkbox' name ='isSustainable'
+                    <% if (shop.isSustainable === true) { %>
+                        checked
+                    <% } %>
+                    />
+                </div>
+                <div class = 'four colums'>
+                    Small Business: <input type ='checkbox' name ='isSmallBusiness'
+                    <% if (shop.isSmallBusiness === true) { %>
+                    checked
+                    <% } %>
+                    />
+                </div>
+            </div>
+            <div class = 'row'>
+                <div class = 'six columns'>
+                    Location: <input type ='text' name ='location' value = '<%= shop.location %>'/>
+                </div>
+                <div class  = 'four columns'>
+                    <input class ='button-primary' type = 'submit' name='' value ='Edit Shop'/>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
