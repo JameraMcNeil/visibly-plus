@@ -27,6 +27,6 @@ Live site: https://mighty-mesa-49376.herokuapp.com/shops
 
 ### Wireframes / Development Notes
 <p>
-<img src ='.public/img/JSM_Wireframe1'>
-<img src ='./public/img/JSM_Wireframe2'>
+<img src ='public/img/JSM_Wireframe1'>
+<img src ='public/img/JSM_Wireframe2'>
 </p>
