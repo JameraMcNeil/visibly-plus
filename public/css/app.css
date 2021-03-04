@@ -1,8 +1,8 @@
 body {
-    margin: 0;
+    /* margin: 0; */
     text-align: center;
 }
 
-.shop-content {
-    list-style-type: none;
+header {
+    padding: 20px
 }
