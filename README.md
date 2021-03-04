@@ -27,6 +27,6 @@ Live site: https://mighty-mesa-49376.herokuapp.com/shops
 
 ### Wireframes / Development Notes
 <p>
-<img src ='public/img/JSM_WireFrame1.jpg' alt ='hand-written notes' width = '350'>
+<img src ='public/img/JSM_Wireframe1.jpg' alt ='hand-written notes' width = '350'>
 <img src ='public/img/JSM_WireFrame2.jpg' alt = 'hand-written notes and wireframes' width ='350'>
 </p>
