@@ -5,41 +5,6 @@ const Shop = require('../models/shops.js')
 
 // ROUTES //
 
-const logRequest = (req, res, next) => {
-    console.log(`${new Date().toISOString()} :: ${req.method} ${req.originalUrl}`);
-    next();
-}
-
-router.use(logRequest);
-// update //
-
-router.put('/:id', (req, res) => {
-    if(req.body.isBlackOwned === 'on') {
-        req.body.isBlackOwned = true;
-    } else {
-        req.body.isBlackowned =false;
-    };
-    if(req.body.isSustainable === 'on') {
-        req.body.isSustainable = true;
-    } else {
-        req.body.isSustainable = false;
-    };
-    if(req.body.isSmallBusiness === 'on') {
-        req.body.isSmallBusiness = true;
-    } else {
-        req.body.isSmallBusiness = false; 
-    };
-    // param 1 = id of shop we are going to update
-    // param 2 - the contents of the update going to the database
-    // param 3 = make sure mongoose send us back the changed record
-    // param 4 = the callback to execute after the database is updated
-    console.log('We are in the put route')
-    console.log(req.body)
-    Shop.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedModel) =>{
-        res.redirect('/shops')
-    });
-});
-
 router.get('/seed', (req, res) => {
     Shop.create([
     {
@@ -183,31 +148,31 @@ router.get('/:id/edit', (req,res) => {
 
 // update //
 
-// router.put('/shops/:id', (req, res) => {
-//     if(req.body.isBlackOwned === 'on') {
-//         req.body.isBlackOwned = true;
-//     } else {
-//         req.body.isBlackowned =false;
-//     };
-//     if(req.body.isSustainable === 'on') {
-//         req.body.isSustainable = true;
-//     } else {
-//         req.body.isSustainable = false;
-//     };
-//     if(req.body.isSmallBusiness === 'on') {
-//         req.body.isSmallBusiness = true;
-//     } else {
-//         req.body.isSmallBusiness = false; 
-//     };
-//     // param 1 = id of shop we are going to update
-//     // param 2 - the contents of the update going to the database
-//     // param 3 = make sure mongoose send us back the changed record
-//     // param 4 = the callback to execute after the database is updated
-//     console.log('We are in the put route')
-//     Shop.findByIdAndUpdate(req.params.id, req,body, {new: true}, (error, updatedModel) =>{
-//         res.redirect('/shops')
-//     })
-// })
+router.put('/:id', (req, res) => {
+    if(req.body.isBlackOwned === 'on') {
+        req.body.isBlackOwned = true;
+    } else {
+        req.body.isBlackowned =false;
+    };
+    if(req.body.isSustainable === 'on') {
+        req.body.isSustainable = true;
+    } else {
+        req.body.isSustainable = false;
+    };
+    if(req.body.isSmallBusiness === 'on') {
+        req.body.isSmallBusiness = true;
+    } else {
+        req.body.isSmallBusiness = false; 
+    };
+    // param 1 = id of shop we are going to update
+    // param 2 - the contents of the update going to the database
+    // param 3 = make sure mongoose send us back the changed record
+    // param 4 = the callback to execute after the database is updated
+    console.log('We are in the put route')
+    Shop.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedModel) =>{
+        res.redirect('/shops')
+    })
+})
 
 
 module.exports = router;
