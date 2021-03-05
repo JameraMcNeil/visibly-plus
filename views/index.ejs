@@ -25,13 +25,13 @@
     
     <div>
     <p class = 'shop-intro'>
-        Despite the average size of an American woman being a size <a href ='https://www.byrdie.com/average-body-weight' target ='_blank'>16 to 18</a>, the shopping experience is still frustrating to navigate for folks with larger bodies. Visibly+ is a resource that allows users to add and browse shops that sell stylish and trendy clothing in extended sizes. Want to see more shops? Add a shop at the link below.
+        Despite the average size of an American woman being a size <a href ='https://www.byrdie.com/average-body-weight' target ='_blank'>16 to 18</a>, the shopping experience is still frustrating to navigate for folks with larger bodies. Visibly+ is a resource that allows users to add and browse shops that sell stylish and trendy clothing in extended sizes. Want to see more shops? Add a shop at the link above!
     </p>
     </div>
     <div class = 'row'>
         <ul>
             <% for (let i = 0; i < allShops.length; i++) { %>
-                <li class = 'four columns'>
+                <li class = 'three columns'>
                     <%= allShops[i].name %> <br/>
                     <a href='/shops/<%= allShops[i].id%>'>
                     <img src = '<%=allShops[i].img%>'style = 'max-width: 300px; max-height: 350px'>
